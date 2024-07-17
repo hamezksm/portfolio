@@ -10,20 +10,27 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
+        serif: ["Merriweather", "serif"],
+        mono: ["Fira Code", "monospace"],
       },
       animation: {
-        glow: "glow 1s ease-in-out infinite alternate",
+        glow: "glow 2s ease-in-out infinite alternate",
+        fadeIn: "fadeIn 1s ease-in forwards",
       },
       keyframes: {
         glow: {
-          from: {
+          "0%, 100%": {
             textShadow:
-              "0 0 5px #fff, 0 0 10px #fff, 0 0 15px #39FF14, 0 0 20px #39FF14",
+              "0 0 5px #1D4ED8, 0 0 10px #1D4ED8, 0 0 15px #1D4ED8, 0 0 20px #1D4ED8",
           },
-          to: {
+          "50%": {
             textShadow:
-              "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #39FF14, 0 0 40px #39FF14",
+              "0 0 10px #1D4ED8, 0 0 20px #1D4ED8, 0 0 30px #1D4ED8, 0 0 40px #1D4ED8",
           },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
       backgroundImage: {
@@ -32,11 +39,36 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "neon-green": "#39FF14",
+        "blue-800": "#1D4ED8",
         "dark-bg": "#0A0A0A",
+        "accent-1": "#64ffda",
+        "accent-2": "#ffb86c",
+      },
+      fontSize: {
+        xxs: "0.65rem",
+        mega: "4rem",
+      },
+      lineHeight: {
+        "extra-loose": "2.5",
+        "12": "3rem",
+      },
+      spacing: {
+        "72": "18rem",
+        "84": "21rem",
+        "96": "24rem",
+      },
+      screens: {
+        xs: "475px",
+        "3xl": "1600px",
+      },
+      zIndex: {
+        "-10": "-10",
+        "60": "60",
+        "70": "70",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
